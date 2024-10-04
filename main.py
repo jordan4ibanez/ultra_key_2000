@@ -38,8 +38,14 @@ if not x.isnumeric():
   exit()
 port = int(x)
 
+cache = []
 
+#* Type: str
 def fire():
+
+  if len(cache) == 0:
+     return
+
   # pid         peer  chan
   #[0, 1, 2, 3][4, 5][6 ]
 
@@ -77,25 +83,27 @@ def fire():
   # I honestly have no idea
   w.extend((1).to_bytes(length=2, byteorder='big'))
   w.extend((0).to_bytes(length=2, byteorder='big'))
-  w.extend((12).to_bytes(length=2, byteorder='big'))
+
+
+  output = "-&-".join(cache)
+
+  w.extend((len(output)).to_bytes(length=2, byteorder='big'))
 
   # Pad this thing because it crashes for literally no reason
-  w.extend(bytes("things to do" + "aaaa","utf-16be"))
+  w.extend(bytes(output + "aaaa","utf-16be"))
+
+  #* ConnectionReceiveThread::receive
+  #* ConnectionReceiveThread::processPacket
+
+  # print(ORIGIN_port)
+  # print(port)
+  # print(w)
 
 
-#* ConnectionReceiveThread::receive
-#* ConnectionReceiveThread::processPacket
+  _ip = scapy.IP(dst = "127.0.0.1", src = "127.0.0.1")
+  _udp = scapy.UDP(sport = ORIGIN_port, dport = port)
 
-
-# print(ORIGIN_port)
-# print(port)
-# print(w)
-
-
-_ip = scapy.IP(dst = "127.0.0.1", src = "127.0.0.1")
-_udp = scapy.UDP(sport = ORIGIN_port, dport = port)
-
-scapy.send(_ip/_udp/w)
+  scapy.send(_ip/_udp/w)
 
 
 
