@@ -84,7 +84,6 @@ def fire():
   w.extend((1).to_bytes(length=2, byteorder='big'))
   w.extend((0).to_bytes(length=2, byteorder='big'))
 
-
   output = "-&-".join(cache)
 
   w.extend((len(output)).to_bytes(length=2, byteorder='big'))
