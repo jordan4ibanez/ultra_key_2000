@@ -39,47 +39,48 @@ if not x.isnumeric():
 port = int(x)
 
 
-# pid         peer  chan
-#[0, 1, 2, 3][4, 5][6 ]
+def fire():
+  # pid         peer  chan
+  #[0, 1, 2, 3][4, 5][6 ]
 
-#! HEADER 7 bytes.
+  #! HEADER 7 bytes.
 
-# protocol ID
-t = int("0x4f457403", 16)
-w = bytearray()
-w.extend(t.to_bytes(length=4, byteorder='big'))
+  # protocol ID
+  t = int("0x4f457403", 16)
+  w = bytearray()
+  w.extend(t.to_bytes(length=4, byteorder='big'))
 
-# peer (is server)
-w.extend((1).to_bytes(length=2, byteorder='big'))
+  # peer (is server)
+  w.extend((1).to_bytes(length=2, byteorder='big'))
 
-# channel
-w.extend((2).to_bytes(length=1, byteorder='big'))
+  # channel
+  w.extend((2).to_bytes(length=1, byteorder='big'))
 
-#! Packet type.
+  #! Packet type.
 
-# type
-w.extend((1).to_bytes(length=1, byteorder='big'))
+  # type
+  w.extend((1).to_bytes(length=1, byteorder='big'))
 
-# control type
-w.extend((0).to_bytes(length=1, byteorder='big'))
+  # control type
+  w.extend((0).to_bytes(length=1, byteorder='big'))
 
-# Instruction
-z = int("0x2F", 16)
-w.extend(z.to_bytes(length=1, byteorder='big'))
+  # Instruction
+  z = int("0x2F", 16)
+  w.extend(z.to_bytes(length=1, byteorder='big'))
 
-# Chat version
-w.extend((1).to_bytes(length=1, byteorder='big'))
+  # Chat version
+  w.extend((1).to_bytes(length=1, byteorder='big'))
 
-# Message type
-w.extend((1).to_bytes(length=1, byteorder='big'))
+  # Message type
+  w.extend((0).to_bytes(length=1, byteorder='big'))
 
-# I honestly have no idea
-w.extend((1).to_bytes(length=2, byteorder='big'))
-w.extend((0).to_bytes(length=2, byteorder='big'))
-w.extend((12).to_bytes(length=2, byteorder='big'))
+  # I honestly have no idea
+  w.extend((1).to_bytes(length=2, byteorder='big'))
+  w.extend((0).to_bytes(length=2, byteorder='big'))
+  w.extend((12).to_bytes(length=2, byteorder='big'))
 
-# Pad this thing because it crashes for literally no reason
-w.extend(bytes("things to do" + "aaaa","utf-16be"))
+  # Pad this thing because it crashes for literally no reason
+  w.extend(bytes("things to do" + "aaaa","utf-16be"))
 
 
 #* ConnectionReceiveThread::receive
@@ -98,26 +99,27 @@ scapy.send(_ip/_udp/w)
 
 
 
-# def OnKeyPress(event): 
-#     print('{}_down'.format(event.Key))
+def OnKeyPress(event): 
+    print('{}_down'.format(event.Key))
 
-# def OnKeyUp(event): 
-#     print('{}_up'.format(event.Key))
+def OnKeyUp(event): 
+    print('{}_up'.format(event.Key))
 
-# new_hook = pyxhook.HookManager() 
-# new_hook.KeyDown = OnKeyPress 
-# new_hook.KeyUp = OnKeyUp
+new_hook = pyxhook.HookManager() 
+new_hook.KeyDown = OnKeyPress 
+new_hook.KeyUp = OnKeyUp
 
 
-# new_hook.HookKeyboard() 
-# try: 
-#     new_hook.start()
-# except KeyboardInterrupt: 
-#     pass
-# except Exception as ex: 
-#     msg = 'Error while catching events:\n  {}'.format(ex) 
-#     pyxhook.print_err(msg) 
-#     print("I suck at python :D")
+new_hook.HookKeyboard() 
+try: 
+    new_hook.start()
+except KeyboardInterrupt: 
+    pass
+except Exception as ex: 
+    msg = 'Error while catching events:\n  {}'.format(ex) 
+    pyxhook.print_err(msg) 
+    print("I suck at python :D")
 
+print("hi")
 
     
