@@ -82,53 +82,21 @@ w.extend((12).to_bytes(length=2, byteorder='big'))
 w.extend(bytes("things to do" + "aaaa","utf-16be"))
 
 
-
-# w.extend(bytes("hi","utf-8"))
-# w.extend(bytes("hi","utf-8"))
-
-# w.extend(bytes("1234567","utf-8") + b'\x00')
-
-
-
-# w.extend(bytes("hi\0","utf-8"))
-
-# w.extend(bytes("hi\0","utf-8"))
-
-# w.extend((0).to_bytes(length=1, byteorder='big'))
-
-
-
-
-
-# w.extend(bytes("0","utf-8"))
-
-
-
-
 #* ConnectionReceiveThread::receive
-
 #* ConnectionReceiveThread::processPacket
 
-
-# w.extend((0).to_bytes(length=1, byteorder='big'))
-
-# w.extend((2).to_bytes(length=1, byteorder='big'))
-
-# w.extend(bytes("\0\0\0\0","utf-8"))
-
-
-print("sending")
 
 # print(ORIGIN_port)
 # print(port)
 # print(w)
 
-# conf.L3socket = L3RawSocket
 
 _ip = scapy.IP(dst = "127.0.0.1", src = "127.0.0.1")
 _udp = scapy.UDP(sport = ORIGIN_port, dport = port)
 
 scapy.send(_ip/_udp/w)
+
+
 
 # def OnKeyPress(event): 
 #     print('{}_down'.format(event.Key))
