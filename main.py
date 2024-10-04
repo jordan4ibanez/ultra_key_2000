@@ -70,7 +70,7 @@ def fire():
   # control type
   w.extend((0).to_bytes(length=1, byteorder='big'))
 
-  # Instruction
+  # Instruction - Mod channel function pointer is at 0x57
   z = int("0x2F", 16)
   w.extend(z.to_bytes(length=1, byteorder='big'))
 
