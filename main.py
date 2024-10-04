@@ -16,7 +16,7 @@ ip = "127.0.0.1"
 port = 30000
 ORIGIN_port = port
 
-TARGET_FPS = 60.0
+TARGET_FPS = 20.0
 
 delta = 1.0 / TARGET_FPS
 
