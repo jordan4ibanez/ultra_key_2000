@@ -26,7 +26,9 @@ This thing does not detect window focus. As long as it's running, it's detecting
 ### This is not: a solution
 
 -----
-# NEVER USE THIS. THIS IS A PROOF OF CONCEPT.
+
+# **NEVER USE THIS. THIS IS A PROOF OF CONCEPT.**
+
 -----
 
 needs:
