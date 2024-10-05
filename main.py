@@ -9,6 +9,12 @@ from time import sleep
 #! AND YES, you do have to give this script scapy priveleges.
 #* No, I'm not telling you how to do this.
 
+
+#! THIS IS ENOUGH OF A HACKJOB AS IT IS.
+#! I AM NOT WRITING IN A WAY TO DETECT WHICH WINDOW IS IN FOCUS.
+#! THIS THING IS GETTING EVERY KEYSTROKE.
+#! SO YOU BEST NOT TYPE IN YOUR PASSWORD WHEN YOU'RE RUNNING THIS!!!
+
 # This is the server you're playing on. If it's local 127.0.0.1
 ip = "my.cool.server"
 ORIGIN_ip = "127.0.0.1"
