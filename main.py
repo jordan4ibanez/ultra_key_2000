@@ -6,6 +6,8 @@ from time import sleep
 # https://www.geeksforgeeks.org/design-a-keylogger-in-python/
 
 #? Why, yes, this is a glorified keylogger and man in the middle attack made into a minetest mod.
+#! AND YES, you do have to give this script scapy priveleges.
+#* No, I'm not telling you how to do this.
 
 # The EXTREMELY STUPID way to enable scapy:
 # sudo setcap cap_net_raw=eip $(readlink -f $(which python))
