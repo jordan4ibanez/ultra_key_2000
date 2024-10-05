@@ -36,3 +36,12 @@ python 3.12+ (probably)
 ```
 pip3 install python3-xlib scapy
 ```
+
+Steps:
+
+1.) Enable the client mod. I'm not telling you how to do this.
+
+2.) Connect to your server, which must be running the server mod.
+
+3.) Start the python script.
+
