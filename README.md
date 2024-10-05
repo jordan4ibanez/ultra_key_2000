@@ -41,8 +41,6 @@ pip3 install python3-xlib scapy
 
 Steps:
 
-0.) Run an x11 desktop.
-
 1.) Enable the client mod. I'm not telling you how to do this.
 
 2.) Enable mod channels. I'm not telling you how to do this.
