@@ -16,7 +16,7 @@ from time import sleep
 #! SO YOU BEST NOT TYPE IN YOUR PASSWORD WHEN YOU'RE RUNNING THIS!!!
 
 # This is the server you're playing on. If it's local 127.0.0.1
-ip = "127.0.0.1"
+ip = "my.cool.server"
 ORIGIN_ip = "127.0.0.1"
 
 # This is the target (server) port. It will be used as a nand gate and mutated.
