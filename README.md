@@ -17,6 +17,8 @@ So this absolute security monstrosity was fired into existence.
 
 This thing, is a glorified keylogger and man in the middle attack, which injects your client with keystrokes as if the server is sending it over a mod channel.
 
+This thing does not detect window focus. As long as it's running, it's detecting and sending your keystrokes to your client if it's connected to a server.
+
 -----
 
 ### This is a test of: if we can
