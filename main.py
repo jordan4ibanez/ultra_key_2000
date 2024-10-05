@@ -9,11 +9,10 @@ from time import sleep
 #! AND YES, you do have to give this script scapy priveleges.
 #* No, I'm not telling you how to do this.
 
-# The EXTREMELY STUPID way to enable scapy:
-# sudo setcap cap_net_raw=eip $(readlink -f $(which python))
-#! THIS WILL ALLOW ANY PYTHON PROGRAM TO CREATE FAKE PACKETS ON YOUR SYSTEM !
+# This is the server you're playing on. If it's local 127.0.0.1
+ip = "my.cool.server"
+ORIGIN_ip = "127.0.0.1"
 
-ip = "127.0.0.1"
 # This is the target (server) port. It will be used as a nand gate and mutated.
 port = 30000
 ORIGIN_port = port
