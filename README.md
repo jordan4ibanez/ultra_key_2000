@@ -45,7 +45,11 @@ Steps:
 
 1.) Enable the client mod. I'm not telling you how to do this.
 
-2.) Connect to your server, which must be running the server mod.
+2.) Enable mod channels. I'm not telling you how to do this.
 
-3.) Start the python script.
+3.) Connect to your server, which must be running the server mod.
+
+4.) Start the python script.
+
+5.) If any of these steps confused you, stop what you're doing right now.
 
