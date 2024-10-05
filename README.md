@@ -11,7 +11,7 @@ For a long time I've seen people ask, "How do we bind any key to anything in min
 
 The answer was: No.
 
-Well, I decided on October 5th 2024 that was probably not a very good answer.
+Well, I decided on October 4th 2024 that was probably not a very good answer.
 
 So this absolute security monstrosity was fired into existence.
 
