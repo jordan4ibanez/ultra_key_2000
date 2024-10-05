@@ -114,11 +114,27 @@ def fire():
 
 
 
+key_repeat_disable = {}
+
 def OnKeyPress(event): 
-    cache.append('{}_down'.format(event.Key).lower())
+    key = '{}_down'.format(event.Key).lower()
+
+    # Ignore key repeat.
+    if key in key_repeat_disable:
+       return
+    
+    key_repeat_disable[key] = True
+
+    cache.append(key)
 
 def OnKeyUp(event): 
-    cache.append('{}_up'.format(event.Key).lower())
+    key = '{}_up'.format(event.Key).lower()
+
+    # Reset ignore key repeat.
+    key_repeat_disable.pop('{}_down'.format(event.Key).lower())
+
+    cache.append(key)
+
 
 new_hook = pyxhook.HookManager() 
 new_hook.KeyDown = OnKeyPress 
@@ -138,6 +154,4 @@ except Exception as ex:
 while True:
    sleep(delta)
    fire()
-   
-
     
