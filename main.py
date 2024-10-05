@@ -122,7 +122,6 @@ def OnKeyPress(event):
     # Ignore key repeat.
     if key in key_repeat_disable:
        return
-    
     key_repeat_disable[key] = True
 
     cache.append(key)
@@ -131,7 +130,9 @@ def OnKeyUp(event):
     key = '{}_up'.format(event.Key).lower()
 
     # Reset ignore key repeat.
-    key_repeat_disable.pop('{}_down'.format(event.Key).lower())
+    old_key = '{}_down'.format(event.Key).lower()
+    if old_key in key_repeat_disable:
+      key_repeat_disable.pop('{}_down'.format(event.Key).lower())
 
     cache.append(key)
 

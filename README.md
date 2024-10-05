@@ -19,6 +19,8 @@ This thing, is a glorified keylogger and man in the middle attack, which injects
 
 This thing does not detect window focus. As long as it's running, it's detecting and sending your keystrokes to your client if it's connected to a server.
 
+Also, this is literally reverse engineered from minetest's networking code.
+
 -----
 
 ### This is a test of: if we can
